@@ -31,14 +31,15 @@
   {% endif %}
   <script type="text/javascript" src="{{ '/assets/js/just-the-docs.js' | relative_url }}"></script>
 
-  {% if page.mathjax %}
-    <script type="text/x-mathjax-config">
-      {{ site.mathjax.config }};
-    </script>
-    <script type="text/javascript" async 
-      src="{{ site.mathjax.source }}">
-    </script>
-  {% endif %}
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
